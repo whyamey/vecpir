@@ -1,9 +1,14 @@
 # Vectorized Batch Private Information Retrieval
 
-This repository contains an implementation of the Vectorized Batch Private Information Retrieval (PIR) Protocol published in IEEE Security and Privacy, 2023. The protocol introduces a novel approach where both communication and computation are amortized over a batch of entries, resulting in significantly lower communication overhead for small entry sizes (ranging from 32 bytes to 256 bytes). Specifically, for a batch of 256 entries and an entry size of 32 bytes, the communication overhead is 11 times less compared to previous schemes.
+This repository contains minimal edits of the Vectorized Batch PIR to get it to compile without needing to globally install SEAL and to get it to compile on Linux with gcc. Minimal and only necessary edits are made so that it could be compared with FrodoPIR for our paper. My edits are licensed under the original license since it's a bother to switch to GPL for a few lines of code. 
 
-The paper detailing the protocol can be found [here](https://ia.cr/2022/1262).
-# Compilation for my edits
+The original paper detailing the protocol can be found [here](https://ia.cr/2022/1262). Many thanks to the authors for making this code public. 
+
+## ⚠️ Important Warning
+
+This implementation is intended for research purposes only. The code has NOT been vetted by security experts. Therefore, no part of this code should be used in any real-world or production setting.
+
+# Compilation
 
 ```bash
 # Clone your repository with submodules
@@ -23,6 +28,3 @@ make
 
 *Acknowledgment: Sun I (is16@illinois.edu) for helping with testing the code*
 
-## ⚠️ Important Warning
-
-This implementation is intended for research purposes only. The code has NOT been vetted by security experts. Therefore, no part of this code should be used in any real-world or production setting.
