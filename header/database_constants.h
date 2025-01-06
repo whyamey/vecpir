@@ -2,6 +2,7 @@
 #define DATABASE_CONSTANTS_H
 
 #include <limits>
+#include <cstdint>
 
 namespace DatabaseConstants {
 

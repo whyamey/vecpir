@@ -5,6 +5,9 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cstdint>
+#include <bitset>
+
 #include "pirparams.h"
 
 class Client {
@@ -44,15 +47,14 @@ private:
     uint64_t entry_slot_;
     vector<uint64_t> entry_slot_list_;
     size_t gap_;
-    size_t row_size_; 
+    size_t row_size_;
     size_t num_databases_;
 
     // Private member functions
     std::vector<size_t> compute_indices(uint64_t desired_index);
     std::vector<unsigned char> convert_to_rawdb_entry(std::vector<uint64_t>  input_list);
     PIRQuery merge_pir_queries(vector<PirDB> plain_queries);
-    void check_noise_budget(const seal::Ciphertext& response); 
+    void check_noise_budget(const seal::Ciphertext& response);
 };
 
 #endif // CLIENT_H
-

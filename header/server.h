@@ -5,6 +5,8 @@
 #include <vector>
 #include <iostream>
 #include <chrono>
+#include <bitset>
+
 #include "pirparams.h"
 
 using namespace seal;
@@ -55,20 +57,20 @@ private:
     size_t gap_;
     bool is_db_preprocessed_;
     bool is_client_keys_set_;
-    PIRQuery query_; 
+    PIRQuery query_;
     size_t num_databases_;
 
     uint64_t server_id_ = 0;
 
-    
-    
+
+
     RawDB rawdb_;
     std::vector<RawDB> rawdb_list_;
     PirDB  db_;
     std::vector<PirDB>  db_list_;
     std::vector<seal::Plaintext> encoded_db_;
 
-    
+
     RawDB populate_return_raw_db();
     void round_dbs();
     void round_db(RawDB& db);
@@ -94,7 +96,7 @@ private:
     bool check_raw_db() const {
         size_t expected_entries = pir_params_.get_rounded_num_entries();
         size_t expected_entry_size = pir_params_.get_entry_size();
-        
+
 
         bool has_correct_entries = (rawdb_.size() == expected_entries);
         bool has_correct_entry_size = (rawdb_[0].size() == expected_entry_size);
